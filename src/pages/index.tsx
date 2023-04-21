@@ -9,13 +9,15 @@ const Home = () => {
   const supabase = useSupabaseClient()
 
   return (
+    <center>
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
       {!session ? (
-        <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} theme="dark" />
+        <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} theme="light" />
       ) : (
         <Account session={session} />
       )}
     </div>
+    </center>
   )
 }
 

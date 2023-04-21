@@ -1,23 +1,22 @@
-import { supabase } from '../../lib/SupabaseClient';
+import { supabase } from '../../lib/SupabaseClient'
 
-function Database({ products }) {
-  return (
-    <ul>
-      {products.map((products) => (
-        <li key={product.id}>{product.name}</li>
-      ))}
-    </ul>
-  );
-}
-
-export async function getServerSideProps() {
-  let { data } = await supabase.from('products').select()
-
-  return {
-    props: {
-     products: data
-    },
+  function Database({ countries }) {
+    return (
+      <ul>
+        {countries.map((country) => (
+          <li key={country.id}>{country.name}</li>
+        ))}
+      </ul>
+    );
   }
-}
 
-export default Database;
+  export async function getServerSideProps() {
+    let { data } = await supabase.from('countries').select()
+
+    return {
+      props: {
+       countries: data
+      },
+    }
+  }
+  export default Database;
