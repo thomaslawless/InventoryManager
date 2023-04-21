@@ -1,4 +1,4 @@
-import { supabase } from '../../lib/SupabaseClient'
+import { supabase } from '../../lib/SupabaseClient';
 
   function Database({ countries }) {
     return (
